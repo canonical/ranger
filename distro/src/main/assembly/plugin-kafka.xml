@@ -61,6 +61,9 @@
 					<include>commons-logging:commons-logging</include>
 					<include>commons-lang:commons-lang</include>
 					<include>commons-io:commons-io</include>
+					<include>org.apache.commons:commons-lang3:jar:${commons.lang3.version}</include>
+                    <include>org.apache.htrace:htrace-core4:jar:${htrace-core.version}</include>
+                    <include>org.apache.commons:commons-compress:jar:${commons.compress.version}</include>
 					<include>org.apache.httpcomponents:httpclient:jar:${httpcomponents.httpclient.version}</include>
 					<include>org.apache.httpcomponents:httpcore:jar:${httpcomponents.httpcore.version}</include>
 					<include>org.apache.httpcomponents:httpmime:jar:${httpcomponents.httpmime.version}</include>
@@ -116,6 +119,9 @@
 					<include>commons-io:commons-io:jar:${commons.io.version}</include>
 					<include>commons-lang:commons-lang:jar:${commons.lang.version}</include>
 					<include>commons-logging:commons-logging</include>
+					<include>org.apache.commons:commons-lang3:jar:${commons.lang3.version}</include>
+					<include>org.apache.htrace:htrace-core4:jar:${htrace-core.version}</include>
+					<include>org.apache.commons:commons-compress:jar:${commons.compress.version}</include>
 					<include>com.google.guava:guava:jar:${google.guava.version}</include>
 					<include>org.slf4j:slf4j-api:jar:${slf4j-api.version}</include>
 					<include>org.apache.hadoop:hadoop-common:jar:${hadoop.version}</include>
