@@ -38,6 +38,7 @@ import org.apache.kafka.common.acl.AclBinding;
 import org.apache.kafka.common.acl.AclBindingFilter;
 import org.apache.kafka.common.acl.AclOperation;
 import org.apache.kafka.common.config.SaslConfigs;
+import org.apache.kafka.common.config.internals.BrokerSecurityConfigs;
 import org.apache.kafka.common.network.ListenerName;
 import org.apache.kafka.common.resource.ResourceType;
 import org.apache.kafka.common.security.JaasContext;
@@ -207,7 +208,7 @@ public class RangerKafkaAuthorizer implements Authorizer {
             final String listenerName = (jaasContext instanceof String
                 && StringUtils.isNotEmpty((String) jaasContext)) ? (String) jaasContext
                 : SecurityProtocol.SASL_PLAINTEXT.name();
-            final String saslMechanism = SaslConfigs.GSSAPI_MECHANISM;
+            final String saslMechanism = ((String) configs.get(BrokerSecurityConfigs.SASL_ENABLED_MECHANISMS_CONFIG)).split(",")[0];
             JaasContext context = JaasContext.loadServerContext(new ListenerName(listenerName), saslMechanism, configs);
             MiscUtil.setUGIFromJAASConfig(context.name());
             UserGroupInformation loginUser = MiscUtil.getUGILoginUser();

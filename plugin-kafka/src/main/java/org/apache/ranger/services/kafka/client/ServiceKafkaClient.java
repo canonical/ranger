@@ -228,7 +228,12 @@ public class ServiceKafkaClient {
 	}
 
 	private String getJAASConfig(Map<String,String> configs){
-		String jaasConfig =  new StringBuilder()
+		String jaasConfig = "";
+
+		if (configs.containsKey(KEY_SASL_JAAS_CONFIG) && configs.get(KEY_SASL_JAAS_CONFIG) != null)
+			jaasConfig = configs.get(KEY_SASL_JAAS_CONFIG).toString();
+		else
+			jaasConfig = new StringBuilder()
 				.append(JAAS_KRB5_MODULE).append(" ")
 				.append(JAAS_USE_KEYTAB).append(" ")
 				.append(JAAS_KEYTAB).append(configs.get(KEY_KAFKA_KEYTAB)).append("\"").append(" ")
