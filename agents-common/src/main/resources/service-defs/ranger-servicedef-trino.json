@@ -354,7 +354,8 @@
         "impersonate",
         "execute",
         "read_sysinfo",
-        "write_sysinfo"
+        "write_sysinfo",
+        "update"
       ]
     },
     {
@@ -374,6 +375,12 @@
       "name":     "write_sysinfo",
       "label":    "Write System Information",
       "category": "MANAGE"
+    },
+    {
+      "itemId": 16,
+      "name": "execute",
+      "label": "Update",
+      "category": "UPDATE"
     }
   ],
   "configs": [
