@@ -678,7 +678,12 @@ public class RangerSystemAccessControl
 
   @Override
   public void checkCanUpdateTableColumns(SystemSecurityContext securityContext, CatalogSchemaTableName table, Set<String> updatedColumnNames) {
-    SystemAccessControl.super.checkCanUpdateTableColumns(securityContext, table, updatedColumnNames);
+    for (RangerTrinoResource res : createResource(table, updatedColumnNames)) {
+      if (!hasPermission(res, securityContext, TrinoAccessType.UPDATE)) {
+        LOG.debug("RangerSystemAccessControl.checkCanUpdateTableColumns(" +table.getSchemaTableName().getTableName() + ") denied");
+        AccessDeniedException.denyUpdateTableColumns(table.getSchemaTableName().getTableName(), updatedColumnNames);
+      }
+    }
   }
 
   /** FUNCTIONS **/
@@ -922,5 +927,5 @@ class RangerTrinoAccessRequest
 }
 
 enum TrinoAccessType {
-  CREATE, DROP, SELECT, INSERT, DELETE, USE, ALTER, ALL, GRANT, REVOKE, SHOW, IMPERSONATE, EXECUTE;
+  CREATE, DROP, SELECT, INSERT, DELETE, USE, ALTER, ALL, GRANT, REVOKE, SHOW, IMPERSONATE, EXECUTE, UPDATE;
 }
