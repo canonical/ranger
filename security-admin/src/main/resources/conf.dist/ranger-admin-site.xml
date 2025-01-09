@@ -52,7 +52,7 @@
 	</property>
 	<property>
 		<name>ranger.audit.elasticsearch.protocol</name>
-		<value>http</value>
+		<value>https</value>
 		<description></description>
 	</property>
 	<property>
