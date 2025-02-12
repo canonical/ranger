@@ -49,13 +49,13 @@
         <checkstyle.plugin.version>3.1.0</checkstyle.plugin.version>
         <checkstyle.version>8.29</checkstyle.version>
         <codehaus.woodstox.stax2api.version>4.2.1</codehaus.woodstox.stax2api.version>
-        <com.microsoft.azure.adal4j.version>1.6.4</com.microsoft.azure.adal4j.version>
+        <com.microsoft.azure.adal4j.version>1.6.7</com.microsoft.azure.adal4j.version>
         <com.microsoft.azure.azure-client-runtime.version>1.6.7</com.microsoft.azure.azure-client-runtime.version>
         <com.microsoft.azure.azure-keyvault.version>1.2.1</com.microsoft.azure.azure-keyvault.version>
         <com.microsoft.azure.azure-mgmt-keyvault.version>1.22.0</com.microsoft.azure.azure-mgmt-keyvault.version>
 
         <!-- Azure Key Vault dependencies -->
-        <com.microsoft.azure.version>1.22.0</com.microsoft.azure.version>
+        <com.microsoft.azure.version>1.41.4</com.microsoft.azure.version>
         <com.microsoft.rest.client-runtime.version>1.6.7</com.microsoft.rest.client-runtime.version>
 
         <!-- Tencent KMS depencies -->
