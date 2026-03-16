@@ -88,7 +88,7 @@
         <dnsjava.version>3.6.2</dnsjava.version>
         <eclipse.jpa.version>2.7.12</eclipse.jpa.version>
         <elasticsearch.version>7.17.29</elasticsearch.version>
-        <enunciate.version>2.13.2</enunciate.version>
+        <enunciate.version>2.17.1</enunciate.version>
         <fasterxml.jackson.databind.version>2.17.2</fasterxml.jackson.databind.version>
         <fasterxml.jackson.version>2.17.2</fasterxml.jackson.version>
         <fasterxml.woodstox.version>5.4.0</fasterxml.woodstox.version>
@@ -130,6 +130,7 @@
         <javax.persistence.version>2.1.0</javax.persistence.version>
         <javax.servlet.version>4.0.0</javax.servlet.version>
         <javax.validation>2.0.1.Final</javax.validation>
+        <jaxb-core.version>2.3.0.1</jaxb-core.version>
         <jaxb-impl.version>2.3.3</jaxb-impl.version>
         <jaxb.api.version>2.3.1</jaxb.api.version>
         <jericho.html.version>3.3</jericho.html.version>
@@ -233,6 +234,16 @@
                 <version>${gson.version}</version>
             </dependency>
             <dependency>
+                <groupId>com.sun.xml.bind</groupId>
+                <artifactId>jaxb-core</artifactId>
+                <version>${jaxb-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sun.xml.bind</groupId>
+                <artifactId>jaxb-impl</artifactId>
+                <version>${jaxb-impl.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.webcohesion.enunciate</groupId>
                 <artifactId>enunciate-core-annotations</artifactId>
                 <version>${enunciate.version}</version>
@@ -303,7 +314,7 @@
             <dependency>
                 <groupId>org.glassfish.jaxb</groupId>
                 <artifactId>jaxb-runtime</artifactId>
-                <version>${jaxb.api.version}</version>
+                <version>${jaxb-impl.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.glassfish.jersey.core</groupId>
